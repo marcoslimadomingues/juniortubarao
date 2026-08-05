@@ -1,0 +1,660 @@
+<!doctype html>
+<!-- Google Sites: Inserir > Incorporar > Incorporar código, colar este HTML inteiro.
+     Definir altura do bloco de incorporação para 2400px+ (sem scroll interno) para a página aparecer inteira. -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Júnior Tubarão · Passeio Ecológico e Eco-gastronômico em Galinhos/RN</title>
+<meta name="description" content="Passeio ecológico com experiência eco-gastronômica em Galinhos/RN: manguezal, salina, cavalos-marinhos, ostras e dunas em um só roteiro. Almoço incluso, com opções de cardápio. Reserve pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E3336;
+    --ink-soft:#2C5457;
+    --teal:#0F6E68;
+    --teal-deep:#0A4A47;
+    --turquoise:#6FCDBE;
+    --turquoise-pale:#DDF0EA;
+    --sand:#F7F1E1;
+    --sand-deep:#EEE2C4;
+    --coral:#E97B4B;
+    --coral-deep:#C85E33;
+    --white:#FFFEFB;
+    --line: rgba(14,51,54,.14);
+    --shadow: 0 18px 40px -20px rgba(10,40,42,.35);
+    --radius: 20px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;width:100%;overflow-x:hidden;}
+  body{
+    margin:0;
+    width:100%;
+    min-height:100vh;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .page{max-width:520px;margin:0 auto;background:var(--sand);position:relative;overflow:hidden;}
+
+  @media (min-width:900px){
+    body{background:var(--teal-deep);}
+    .page{max-width:1180px;box-shadow:0 40px 90px -30px rgba(10,40,42,.45);}
+    .topbar{max-width:1180px;padding:.9rem 2.4rem;}
+    .wa-float{right:max(1.4rem, calc((100vw - 1180px) / 2 + 1.4rem));}
+  }
+
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;color:var(--ink);}
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:flex;
+    align-items:center;
+    gap:.5em;
+    margin:0 0 .9rem;
+  }
+  .eyebrow::before{content:"";width:18px;height:1px;background:var(--coral);display:inline-block;}
+
+  .icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    position:fixed;top:0;left:50%;transform:translate(-50%,-110%);
+    width:100%;max-width:520px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.7rem 1.2rem;
+    background:rgba(247,241,225,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    z-index:50;
+    transition:transform .35s ease;
+  }
+  .topbar.show{transform:translate(-50%,0);}
+  .topbar__brand{font-family:'Fraunces',serif;font-weight:650;font-size:1.02rem;color:var(--teal-deep);display:flex;align-items:center;gap:.4rem;}
+  .topbar__call{
+    display:flex;align-items:center;gap:.4rem;
+    background:var(--teal-deep);color:var(--white);
+    border-radius:999px;padding:.5rem .9rem;
+    font-size:.82rem;font-weight:700;text-decoration:none;
+  }
+  .topbar__call .icon{width:14px;height:14px;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:3.1rem 1.3rem 0;
+    background:
+      radial-gradient(120% 70% at 78% -10%, #FFE7C2 0%, rgba(255,231,194,0) 55%),
+      linear-gradient(180deg,#0B4A47 0%, #0F6E68 46%, #1B8B80 100%);
+    color:var(--white);
+    overflow:hidden;
+  }
+  .hero__top{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:2.4rem;
+  }
+  .hero__brand{
+    display:flex;align-items:center;gap:.55rem;
+    font-family:'Fraunces',serif;font-weight:650;font-size:1.05rem;letter-spacing:.01em;
+  }
+  .hero__brand .icon{width:30px;height:30px;color:var(--coral);stroke-width:1.4;}
+  .hero__rating{
+    display:flex;align-items:center;gap:.3rem;
+    font-family:'Space Mono',monospace;font-size:.72rem;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;padding:.35rem .65rem;
+  }
+  .hero__rating .stars{display:flex;gap:1px;color:#FFC259;}
+  .hero__rating .icon{width:13px;height:13px;fill:currentColor;stroke:none;}
+
+  .hero__eyebrow{
+    font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--turquoise-pale);opacity:.9;margin-bottom:.85rem;
+  }
+  .hero h1{
+    font-size:1.85rem;line-height:1.16;font-weight:650;
+    max-width:22ch;
+  }
+  .hero h1 em{font-style:italic;font-weight:500;color:#FFD9AE;}
+  .hero p{
+    margin:1.05rem 0 0;max-width:32ch;
+    color:rgba(255,255,255,.86);font-size:.98rem;
+  }
+  .hero__cta{
+    display:inline-flex;align-items:center;gap:.55rem;
+    margin-top:1.6rem;
+    background:var(--coral);color:var(--white);
+    font-weight:700;font-size:.96rem;
+    padding:.95rem 1.35rem;border-radius:14px;
+    text-decoration:none;box-shadow:0 16px 30px -12px rgba(201,90,45,.65);
+  }
+  .hero__cta .icon{width:21px;height:21px;stroke-width:2;}
+  .hero__note{
+    margin:.8rem 0 0;font-size:.78rem;color:rgba(255,255,255,.7);
+  }
+
+  .horizon{position:relative;height:96px;margin-top:2.3rem;}
+  .horizon svg{position:absolute;bottom:0;left:0;width:100%;height:100%;}
+  .horizon .wake{
+    position:absolute;bottom:40px;left:8%;
+    stroke:rgba(255,255,255,.55);
+  }
+
+  /* ---------- generic section shells ---------- */
+  .block{padding:2.7rem 1.3rem;}
+  .block--tight{padding-top:1.6rem;}
+  .block--sand{background:var(--sand);}
+  .block--deep{background:var(--teal-deep);color:var(--white);}
+  .block--white{background:var(--white);}
+  .h2{font-size:1.5rem;font-weight:650;line-height:1.18;margin-bottom:.5rem;}
+  .lede{font-size:.94rem;color:var(--ink-soft);max-width:36ch;margin:0 0 1.6rem;}
+  .block--deep .lede{color:rgba(255,255,255,.72);}
+
+  /* ---------- pricing ---------- */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+  .price-card{
+    min-width:0;
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.2rem 1rem 1.3rem;position:relative;
+  }
+  .price-card--group{background:var(--teal-deep);color:var(--white);border-color:var(--teal-deep);}
+  .price-card__tag{
+    font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);
+  }
+  .price-card--group .price-card__tag{color:var(--turquoise);}
+  .price-card__title{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:650;margin:.3rem 0 .7rem;}
+  .price-card__value{display:flex;align-items:baseline;gap:.25rem;margin-bottom:.15rem;}
+  .price-card__value{flex-wrap:wrap;}
+  .price-card__value b{font-family:'Fraunces',serif;font-size:1.85rem;font-weight:650;}
+  .price-card__value span{font-size:.78rem;color:var(--ink-soft);}
+  .price-card--group .price-card__value span{color:rgba(255,255,255,.7);}
+  .price-card__for{font-size:.82rem;color:var(--ink-soft);margin:0 0 .9rem;}
+  .price-card--group .price-card__for{color:rgba(255,255,255,.78);}
+  .price-card__meta{
+    display:flex;flex-direction:column;gap:.35rem;
+    font-size:.78rem;padding-top:.8rem;border-top:1px dashed var(--line);
+  }
+  .price-card--group .price-card__meta{border-top-color:rgba(255,255,255,.22);}
+  .price-card__meta li{display:flex;align-items:center;gap:.4rem;list-style:none;}
+  .price-card__meta .icon{width:16px;height:16px;color:var(--coral);flex:none;}
+  .price-note{
+    margin-top:1rem;font-size:.8rem;color:var(--ink-soft);
+    display:flex;gap:.5rem;align-items:flex-start;
+  }
+  .price-note .icon{width:18px;height:18px;color:var(--teal);flex:none;margin-top:.15rem;}
+
+  /* ---------- drinks ---------- */
+  .drinks-card{
+    background:var(--white);border-radius:var(--radius);border:1px solid var(--line);
+    padding:1.3rem 1.2rem;
+  }
+  .drinks-list{
+    list-style:none;margin:0 0 1rem;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;gap:.55rem .8rem;
+  }
+  .drinks-list li{
+    display:flex;align-items:center;gap:.5rem;min-width:0;
+    font-size:.88rem;font-weight:600;color:var(--ink);
+  }
+  .drinks-list .icon{width:20px;height:20px;color:var(--teal);flex:none;}
+  .drinks-flag{
+    display:flex;gap:.65rem;align-items:flex-start;
+    background:var(--sand-deep);border-radius:14px;padding:.85rem .95rem;
+    font-size:.82rem;color:var(--ink-soft);
+  }
+  .drinks-flag .icon{width:23px;height:23px;color:var(--coral);flex:none;margin-top:.05rem;}
+  .drinks-flag b{color:var(--ink);}
+
+  /* ---------- badges ---------- */
+  .chips{
+    display:flex;gap:.65rem;overflow-x:auto;margin:0 -1.3rem;padding:.2rem 1.3rem .4rem;
+    scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{display:none;}
+  .chip{
+    flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:.85rem .95rem;min-width:126px;
+  }
+  .chip .icon{width:22px;height:22px;color:var(--coral);}
+  .chip span{font-size:.82rem;font-weight:700;color:var(--ink);line-height:1.25;}
+
+  /* ---------- roteiro (signature) ---------- */
+  .route{position:relative;padding-left:2.55rem;}
+  .route::before{
+    content:"";position:absolute;left:.72rem;top:.35rem;bottom:.35rem;width:0;
+    border-left:2px dashed rgba(15,110,104,.35);
+  }
+  .route-item{position:relative;padding-bottom:1.7rem;}
+  .route-item:last-child{padding-bottom:0;}
+  .route-item__num{
+    position:absolute;left:-2.55rem;top:0;
+    width:1.9rem;height:1.9rem;border-radius:50%;
+    background:var(--white);border:2px solid var(--teal);color:var(--teal-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Mono',monospace;font-weight:700;font-size:.72rem;
+  }
+  .route-item--stay .route-item__num{background:var(--coral);border-color:var(--coral);color:var(--white);}
+  .route-item__head{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;flex-wrap:wrap;}
+  .route-item__title{font-family:'Fraunces',serif;font-weight:650;font-size:1.03rem;}
+  .route-item__tag{
+    font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--coral-deep);background:rgba(233,123,75,.14);border-radius:999px;padding:.2rem .55rem;
+    white-space:nowrap;
+  }
+  .route-item__desc{font-size:.85rem;color:var(--ink-soft);margin:.3rem 0 0;max-width:34ch;}
+
+  /* ---------- menu (almoço) ---------- */
+  .menu-note{
+    display:flex;gap:.6rem;align-items:flex-start;
+    background:var(--turquoise-pale);border-radius:14px;padding:.85rem .95rem;
+    font-size:.82rem;color:var(--teal-deep);margin-bottom:1.3rem;
+  }
+  .menu-note .icon{width:20px;height:20px;color:var(--teal);flex:none;margin-top:.1rem;}
+  .menu-grid{display:flex;flex-direction:column;gap:.9rem;}
+  .menu-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.15rem 1.15rem 1.3rem;
+  }
+  .menu-card__eyebrow{
+    font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);
+  }
+  .menu-card__title{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:650;margin:.25rem 0 .85rem;}
+  .menu-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .menu-card li{display:flex;align-items:flex-start;gap:.55rem;font-size:.87rem;color:var(--ink);}
+  .menu-card li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--coral);margin-top:.5rem;flex:none;}
+
+  /* ---------- social ---------- */
+  .social-row{display:flex;gap:.8rem;}
+  .social-card{
+    flex:1;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:1.05rem;display:flex;flex-direction:column;gap:.5rem;text-decoration:none;color:var(--ink);
+  }
+  .social-card .icon{width:23px;height:23px;color:var(--coral);}
+  .social-card b{font-family:'Fraunces',serif;font-size:.95rem;}
+  .social-card small{font-size:.76rem;color:var(--ink-soft);}
+
+  /* ---------- booking / footer ---------- */
+  .booking{
+    background:linear-gradient(160deg,#0F6E68,#0A4A47 70%);
+    color:var(--white);border-radius:26px;margin:0 1.3rem 0;padding:2.1rem 1.4rem 2.3rem;
+    text-align:center;position:relative;overflow:hidden;
+  }
+  .booking .icon-anchor{width:38px;height:38px;color:var(--coral);margin:0 auto 1rem;}
+  .booking h2{font-size:1.55rem;line-height:1.2;margin-bottom:.6rem;color:var(--white);}
+  .booking p{font-size:.9rem;color:rgba(255,255,255,.78);max-width:30ch;margin:0 auto 1.5rem;}
+  .booking__cta{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--coral);color:var(--white);font-weight:700;font-size:1rem;
+    padding:1rem 1.5rem;border-radius:14px;text-decoration:none;width:100%;justify-content:center;
+    box-shadow:0 16px 30px -12px rgba(201,90,45,.7);
+  }
+  .booking__cta .icon{width:22px;height:22px;}
+
+  .footer{padding:2.2rem 1.3rem 6.5rem;text-align:center;}
+  .footer__brand{
+    display:flex;align-items:center;justify-content:center;gap:.5rem;
+    font-family:'Fraunces',serif;font-weight:650;font-size:1.05rem;color:var(--teal-deep);margin-bottom:.3rem;
+  }
+  .footer__brand .icon{width:25px;height:25px;color:var(--coral);}
+  .footer__loc{font-size:.78rem;color:var(--ink-soft);margin-bottom:1.1rem;}
+  .footer__social{display:flex;justify-content:center;gap:.7rem;}
+  .footer__social a{
+    width:46px;height:46px;border-radius:50%;background:var(--white);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--teal-deep);
+  }
+  .footer__social .icon{width:25px;height:25px;}
+  .footer__fine{margin-top:1.3rem;font-size:.7rem;color:var(--ink-soft);opacity:.75;}
+  .footer__credit{margin-top:.6rem;font-size:.7rem;color:var(--ink-soft);opacity:.75;}
+  .footer__credit a{color:var(--teal-deep);text-decoration:underline;opacity:1;}
+
+  .wa-float{
+    position:fixed;bottom:1.1rem;
+    right:max(1.1rem, calc((100vw - 520px) / 2 + 1.1rem));
+    width:56px;height:56px;border-radius:50%;
+    background:var(--coral);color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 26px -8px rgba(201,90,45,.6);
+    text-decoration:none;z-index:60;
+  }
+  .wa-float .icon{width:29px;height:29px;stroke-width:1.8;}
+
+  @media (max-width:380px){
+    .hero h1{font-size:1.6rem;}
+  }
+  @media (max-width:359px){
+    .price-grid{grid-template-columns:1fr;}
+    .price-card--group{margin-top:0;}
+  }
+
+  /* ---------- desktop (>=900px), single page, same content ---------- */
+  @media (min-width:900px){
+    .hero{padding:3.8rem 3.2rem 0;}
+    .hero h1{font-size:2.4rem;max-width:24ch;}
+    .hero p{font-size:1.05rem;max-width:44ch;}
+
+    .block{padding:3.6rem 3.2rem;}
+    .block--tight{padding-top:2rem;}
+    .lede{max-width:46ch;}
+
+    .price-grid{gap:1.1rem;max-width:640px;}
+    .price-card{padding:1.5rem 1.3rem 1.6rem;transition:transform .25s ease, box-shadow .25s ease;}
+    .price-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+
+    .drinks-card{max-width:760px;}
+    .drinks-list{grid-template-columns:repeat(4,1fr);}
+
+    .chips{overflow-x:visible;flex-wrap:wrap;margin:0;padding:0;}
+    .chip{min-width:150px;flex:1 1 150px;}
+
+    /* roteiro: two-column timeline */
+    .route{column-count:2;column-gap:2.8rem;padding-left:0;max-width:900px;}
+    .route::before{display:none;}
+    .route-item{break-inside:avoid;padding-left:2.55rem;padding-bottom:1.9rem;}
+    .route-item::before{
+      content:"";position:absolute;left:.72rem;top:1.9rem;bottom:-.35rem;width:0;
+      border-left:2px dashed rgba(15,110,104,.35);
+    }
+    .route-item:last-child::before,.route-item:nth-child(6)::before{display:none;}
+    .route-item__num{left:0;}
+
+    .menu-grid{flex-direction:row;gap:1.2rem;}
+    .menu-card{flex:1;}
+
+    .social-row .social-card,.hero__cta,.booking__cta{transition:transform .2s ease, box-shadow .2s ease;}
+    .social-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+    .hero__cta:hover,.booking__cta:hover{transform:translateY(-2px);box-shadow:0 20px 34px -14px rgba(201,90,45,.75);}
+    .topbar__call:hover{filter:brightness(1.1);}
+
+    .booking{padding:2.8rem 3.5rem;}
+    .booking p{max-width:40ch;}
+    .booking__cta{width:auto;padding:1rem 2.4rem;}
+
+    .footer{padding:2.6rem 3.2rem 3.5rem;}
+  }
+
+  [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+    .topbar{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-boat" viewBox="0 0 24 24"><path d="M3 15h18l-2.2 4.2a2 2 0 0 1-1.8 1.1H7a2 2 0 0 1-1.8-1.1L3 15Z"/><path d="M6 15V9.5L12 7l6 2.5V15"/><path d="M12 7V3"/><path d="M12 3h4l-4 3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.5l6-.7L12 3.2Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M7 20.5 3.5 21.5 4.6 18a8.2 8.2 0 1 1 2.9 2.9Z"/><path d="M8.7 8.6c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.4.2.5.6 1.5.6 1.6.1.1.1.3 0 .4-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.6 1 1.2 1.7 2.1 2.2.3.2.5.1.6-.1l.5-.6c.2-.2.3-.2.6-.1l1.4.7c.2.1.4.2.4.4 0 .2 0 1-.4 1.4-.3.4-1.1.8-1.9.7-1.8-.2-3.5-1-4.8-2.4-1.1-1.1-1.8-2.3-2-2.7-.2-.4-.5-1.1 0-1.9Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.2l1.3 4-2 1.3a12 12 0 0 0 5.2 5.2l1.3-2 4 1.3V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.2 2 2 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 7"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M6 3.5h9.5L19 7v13.5H6z"/><path d="M15.5 3.5V7H19"/><path d="M9 12h6M9 15.5h6"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5S6 11 6 15a6 6 0 0 0 12 0c0-4-6-11.5-6-11.5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.1 5.9l-1.6 1.6M7.5 16.5 5.9 18.1M18.1 18.1l-1.6-1.6M7.5 7.5 5.9 5.9"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15 9l-2 5-4.5 1.5L10.5 10 15 9Z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c8.5 0 14-5.5 14-14-8.5 0-14 5.5-14 14Z"/><path d="M5 19c0-5 2-8.5 6-11"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.3-4.5-9.8-9C.6 7.6 2.4 4 6 4c2.2 0 3.7 1.3 4.5 2.7C11.3 5.3 12.8 4 15 4c3.6 0 5.4 3.6 3.8 7-2.5 4.5-9.8 9-9.8 9Z"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v13"/><path d="M6 12H2a10 10 0 0 0 10 9 10 10 0 0 0 10-9h-4"/><path d="M8 9h8"/></symbol>
+  <symbol id="i-shell" viewBox="0 0 24 24"><path d="M4 15c0-6 3.6-11 8-11s8 5 8 11H4Z"/><path d="M4 15h16l-1.5 3.2a2 2 0 0 1-1.8 1.1H7.3a2 2 0 0 1-1.8-1.1L4 15Z"/><path d="M12 4v11M8.5 6.5 9.7 15M15.5 6.5 14.3 15"/></symbol>
+  <symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12s3.5-4.5 9-4.5S21 12 21 12s-3.5 4.5-9 4.5S3 12 3 12Z"/><path d="M21 12l2.3-2.6M21 12l2.3 2.6"/><circle cx="8.3" cy="11" r=".7" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<div class="page">
+
+  <div class="topbar" id="topbar">
+    <div class="topbar__brand"><svg class="icon"><use href="#i-fish"/></svg> Júnior Tubarão</div>
+    <a class="topbar__call" href="https://wa.me/5584994393494?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20reservar%20o%20passeio%20de%20barco%20em%20Galinhos." target="_blank" rel="noopener">
+      <svg class="icon"><use href="#i-wa"/></svg> Reservar
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__top">
+      <div class="hero__brand"><svg class="icon"><use href="#i-fish"/></svg> Júnior Tubarão</div>
+      <div class="hero__rating">
+        <span class="stars">
+          <svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg>
+        </span>
+        Tripadvisor
+      </div>
+    </div>
+
+    <p class="hero__eyebrow">Passeio ecológico · Galinhos / RN</p>
+    <h1>Passeio ecológico com uma experiência <em>eco-gastronômica</em> com Júnior Tubarão.</h1>
+    <p>Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco — com parada para almoço no flutuante.</p>
+
+    <a class="hero__cta" href="https://wa.me/5584994393494?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20reservar%20o%20passeio%20de%20barco%20em%20Galinhos." target="_blank" rel="noopener">
+      <svg class="icon"><use href="#i-wa"/></svg> Reservar pelo WhatsApp
+    </a>
+    <p class="hero__note">Resposta rápida</p>
+
+    <div class="horizon">
+      <svg viewBox="0 0 400 96" preserveAspectRatio="none">
+        <path d="M0 40 C60 55, 120 25, 200 40 C280 55, 340 25, 400 40 V96 H0 Z" fill="#DDF0EA" opacity=".9"/>
+        <path d="M0 55 C60 68, 120 44, 200 55 C280 68, 340 44, 400 55 V96 H0 Z" fill="#F7F1E1"/>
+      </svg>
+      <svg class="wake" width="150" height="26" viewBox="0 0 150 26"><path d="M2 20 Q20 5 40 16 T80 12" stroke-width="1.4" fill="none" stroke-dasharray="1 6" stroke-linecap="round"/></svg>
+      <svg style="position:absolute;bottom:34px;left:8%;width:34px;height:24px;color:#0A4A47" viewBox="0 0 24 24"><use href="#i-boat" fill="#0A4A47" stroke="none"/></svg>
+    </div>
+  </header>
+
+  <!-- PRICING -->
+  <section class="block block--sand" id="precos" data-reveal>
+    <p class="eyebrow">Investimento</p>
+    <h2 class="h2">Escolha como vão navegar</h2>
+    <p class="lede">Valores por pessoa — o passeio é o mesmo, o que muda é o tamanho do grupo.</p>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <p class="price-card__tag">Casal</p>
+        <p class="price-card__title">Até 3 pessoas</p>
+        <div class="price-card__value"><b>R$250</b><span>/&nbsp;pessoa</span></div>
+        <p class="price-card__for">Ideal para casal ou trio</p>
+        <ul class="price-card__meta">
+          <li><svg class="icon"><use href="#i-check"/></svg> Almoço incluso</li>
+          <li><svg class="icon"><use href="#i-drop"/></svg> Bebidas à parte</li>
+        </ul>
+      </div>
+      <div class="price-card price-card--group">
+        <p class="price-card__tag">Grupo</p>
+        <p class="price-card__title">4 ou mais</p>
+        <div class="price-card__value"><b>R$170</b><span>/&nbsp;pessoa</span></div>
+        <p class="price-card__for">Turma de amigos ou família</p>
+        <ul class="price-card__meta">
+          <li><svg class="icon"><use href="#i-check"/></svg> Almoço incluso</li>
+          <li><svg class="icon"><use href="#i-drop"/></svg> Bebidas à parte</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="price-note"><svg class="icon"><use href="#i-note"/></svg> O almoço já está no valor do passeio. As bebidas são cobradas separadamente — veja o cardápio abaixo.</p>
+  </section>
+
+  <!-- DRINKS -->
+  <section class="block block--sand block--tight" data-reveal>
+    <div class="drinks-card">
+      <p class="eyebrow">O que vocês vão beber?</p>
+      <ul class="drinks-list">
+        <li><svg class="icon"><use href="#i-drop"/></svg> Espumante</li>
+        <li><svg class="icon"><use href="#i-drop"/></svg> Vinhos</li>
+        <li><svg class="icon"><use href="#i-drop"/></svg> Cerveja</li>
+        <li><svg class="icon"><use href="#i-drop"/></svg> Água de coco</li>
+        <li><svg class="icon"><use href="#i-drop"/></svg> Água</li>
+        <li><svg class="icon"><use href="#i-drop"/></svg> Refrigerante</li>
+      </ul>
+      <p class="drinks-flag"><svg class="icon"><use href="#i-fish"/></svg> <span><b>Aviso do Tubarão:</b> as bebidas são cobradas separadamente do valor do passeio.</span></p>
+    </div>
+  </section>
+
+  <!-- BADGES -->
+  <section class="block block--sand block--tight" data-reveal>
+    <div class="chips">
+      <div class="chip"><svg class="icon"><use href="#i-sun"/></svg><span>Diversão</span></div>
+      <div class="chip"><svg class="icon"><use href="#i-compass"/></svg><span>Aventura</span></div>
+      <div class="chip"><svg class="icon"><use href="#i-drop"/></svg><span>Relaxamento</span></div>
+      <div class="chip"><svg class="icon"><use href="#i-leaf"/></svg><span>Natureza</span></div>
+      <div class="chip"><svg class="icon"><use href="#i-heart"/></svg><span>Momentos&nbsp;inesquecíveis</span></div>
+    </div>
+  </section>
+
+  <!-- ROTEIRO -->
+  <section class="block block--white" id="roteiro" data-reveal>
+    <p class="eyebrow">Roteiro do passeio</p>
+    <h2 class="h2">Sete paradas, uma manhã de Galinhos</h2>
+    <p class="lede">O barco segue esta ordem — a natureza dita o ritmo, então pequenos ajustes de maré e clima podem acontecer.</p>
+
+    <div class="route">
+      <div class="route-item">
+        <div class="route-item__num">01</div>
+        <div class="route-item__head"><span class="route-item__title">Saída de barco</span></div>
+        <p class="route-item__desc">Embarque e saída rumo ao manguezal de Galinhos.</p>
+      </div>
+      <div class="route-item">
+        <div class="route-item__num">02</div>
+        <div class="route-item__head"><span class="route-item__title">Salina Diamante Branco</span></div>
+        <p class="route-item__desc">Parada na paisagem branca das salinas, um dos cartões-postais da região.</p>
+      </div>
+      <div class="route-item">
+        <div class="route-item__num">03</div>
+        <div class="route-item__head"><span class="route-item__title">Berçário de cavalos-marinhos</span><span class="route-item__tag">Só na maré baixa</span></div>
+        <p class="route-item__desc">Observação no habitat natural — depende das condições da maré no dia.</p>
+      </div>
+      <div class="route-item">
+        <div class="route-item__num">04</div>
+        <div class="route-item__head"><span class="route-item__title">Banco de ostras naturais</span></div>
+        <p class="route-item__desc">Passagem pelos bancos de ostras que nascem soltas no mangue.</p>
+      </div>
+      <div class="route-item">
+        <div class="route-item__num">05</div>
+        <div class="route-item__head"><span class="route-item__title">Dunas do Capim</span><span class="route-item__tag">Banho + fotos</span></div>
+        <p class="route-item__desc">Parada para subir as dunas, tirar fotos e dar um mergulho.</p>
+      </div>
+      <div class="route-item route-item--stay">
+        <div class="route-item__num">06</div>
+        <div class="route-item__head"><span class="route-item__title">Almoço no flutuante</span><span class="route-item__tag">Almoço incluso</span></div>
+        <p class="route-item__desc">A parada mais longa do passeio: almoço servido no flutuante, com tempo livre para banho.</p>
+      </div>
+      <div class="route-item">
+        <div class="route-item__num">07</div>
+        <div class="route-item__head"><span class="route-item__title">Vista da Duna do André</span></div>
+        <p class="route-item__desc">Contemplação de longe — não subimos na duna, para preservar o ecossistema.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALMOÇO -->
+  <section class="block block--sand" id="almoco" data-reveal>
+    <p class="eyebrow">Informações do almoço</p>
+    <h2 class="h2">Trabalhamos com 2 opções de menu pra vocês escolherem!</h2>
+
+    <p class="menu-note"><svg class="icon"><use href="#i-note"/></svg> <span>O grupo escolhe <b>uma única opção</b> de cardápio — ela vale para todos os participantes.<br>Podemos fazer alteração nos menus.</span></p>
+
+    <div class="menu-grid">
+      <div class="menu-card">
+        <p class="menu-card__eyebrow">Cardápio 01</p>
+        <p class="menu-card__title">Ostras &amp; sashimi</p>
+        <ul>
+          <li>Menu degustação de ostras</li>
+          <li>Sashimi ao molho "melhor amor"</li>
+          <li>Sashimi ao shoyu</li>
+          <li>Sashimi ao molho agridoce de abacaxi</li>
+          <li>Sashimi massaricado com tarê</li>
+          <li>Frutas</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <p class="menu-card__eyebrow">Cardápio 02</p>
+        <p class="menu-card__title">Peixe &amp; camarão</p>
+        <ul>
+          <li>Isca de peixe empanada</li>
+          <li>Camarão ao óleo</li>
+          <li>Peixe frito ou grelhado com arroz</li>
+          <li>Batata doce</li>
+          <li>Salada de legumes</li>
+          <li>Frutas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="block block--sand block--tight" data-reveal>
+    <div class="social-row">
+      <a class="social-card" href="https://www.tripadvisor.com" target="_blank" rel="noopener">
+        <svg class="icon"><use href="#i-star"/></svg>
+        <b>5 estrelas</b>
+        <small>Avaliação no Tripadvisor</small>
+      </a>
+      <a class="social-card" href="https://instagram.com/galinhostubarao" target="_blank" rel="noopener">
+        <svg class="icon"><use href="#i-insta"/></svg>
+        <b>@galinhostubarao</b>
+        <small>Fotos do passeio</small>
+      </a>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="block block--sand" data-reveal>
+    <div class="booking" id="reserva">
+      <svg class="icon icon-anchor"><use href="#i-anchor"/></svg>
+      <h2>Faça sua reserva agora</h2>
+      <p>Poucas vagas por saída. Chame no WhatsApp e garanta a data do seu passeio em Galinhos.</p>
+      <a class="booking__cta" href="https://wa.me/5584994393494?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20reservar%20o%20passeio%20de%20barco%20em%20Galinhos." target="_blank" rel="noopener">
+        <svg class="icon"><use href="#i-wa"/></svg> Chamar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__brand"><svg class="icon"><use href="#i-fish"/></svg> Júnior Tubarão</div>
+    <p class="footer__loc">Passeios de barco em Galinhos · Rio Grande do Norte</p>
+    <div class="footer__social">
+      <a href="https://instagram.com/galinhostubarao" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-insta"/></svg></a>
+      <a href="https://wa.me/5584994393494" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon"><use href="#i-wa"/></svg></a>
+    </div>
+    <p class="footer__fine">Roteiro sujeito a condições de maré e clima no dia do passeio.</p>
+    <p class="footer__credit">Site desenvolvido por <a href="https://marcoslima.com.br" target="_blank" rel="noopener">ML Sites e Sistemas</a></p>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5584994393494?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20reservar%20o%20passeio%20de%20barco%20em%20Galinhos." target="_blank" rel="noopener" aria-label="Reservar pelo WhatsApp">
+    <svg class="icon"><use href="#i-wa"/></svg>
+  </a>
+
+</div>
+
+<script>
+  const topbar = document.getElementById('topbar');
+  const heroH = document.querySelector('.hero').offsetHeight;
+  window.addEventListener('scroll', () => {
+    topbar.classList.toggle('show', window.scrollY > heroH - 60);
+  }, {passive:true});
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
