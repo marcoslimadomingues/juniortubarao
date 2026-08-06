@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Júnior Tubarão · Passeio Ecológico e Eco-gastronômico em Galinhos/RN</title>
-<meta name="description" content="Passeio ecológico com experiência eco-gastronômica em Galinhos/RN: manguezal, salina, cavalos-marinhos, ostras e dunas em um só roteiro. Almoço incluso, com opções de cardápio. Reserve pelo WhatsApp.">
+<meta name="description" content="Passeio ecológico com experiência eco-gastronômica em Galinhos/RN: manguezal, salina, cavalos-marinhos, ostras e dunas em um só roteiro. Saídas às 09:00 e às 15:00 (Love Mangrove, com fogueira). Refeição inclusa. Reserve pelo WhatsApp.">
 
 <!-- Favicon: peixe do sprite, embutido como SVG (sem requisição de rede) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230A4A47'/%3E%3Cg fill='none' stroke='%23E97B4B' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' transform='translate(2.4 2.4) scale(.8)'%3E%3Cpath d='M3 12s3.5-4.5 9-4.5S21 12 21 12s-3.5 4.5-9 4.5S3 12 3 12Z'/%3E%3Cpath d='M21 12l2.3-2.6M21 12l2.3 2.6'/%3E%3C/g%3E%3Ccircle cx='9' cy='11.2' r='.7' fill='%23E97B4B'/%3E%3C/svg%3E">
@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Júnior Tubarão">
 <meta property="og:url" content="https://juniortubarao.com.br/">
 <meta property="og:title" content="Júnior Tubarão · Passeio Ecológico em Galinhos/RN">
-<meta property="og:description" content="Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco — com almoço incluso no flutuante. Reserve pelo WhatsApp.">
+<meta property="og:description" content="Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco, com refeição inclusa no flutuante. Saídas às 09:00 e às 15:00 — esta com fogueira ao anoitecer.">
 <!-- FOTO DO PREVIEW: suba uma imagem 1200x630px como preview.jpg na raiz do repositório
      e descomente as 3 linhas abaixo para o link mostrar a foto ao ser compartilhado.
 <meta property="og:image" content="https://juniortubarao.com.br/preview.jpg">
@@ -30,7 +30,7 @@
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Júnior Tubarão · Passeio Ecológico em Galinhos/RN">
-<meta name="twitter:description" content="Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco — com almoço incluso no flutuante.">
+<meta name="twitter:description" content="Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco, com refeição inclusa. Saídas às 09:00 e às 15:00.">
 
 <link rel="canonical" href="https://juniortubarao.com.br/">
 
@@ -223,6 +223,44 @@
   }
   .price-note .icon{width:18px;height:18px;color:var(--teal);flex:none;margin-top:.15rem;}
 
+  /* ---------- horários ---------- */
+  .shift-grid{display:flex;flex-direction:column;gap:.85rem;}
+  .shift-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.15rem 1.15rem 1.25rem;position:relative;
+  }
+  .shift-card--dusk{
+    background:linear-gradient(165deg,#12474C,#0A4A47 75%);
+    border-color:var(--teal-deep);color:var(--white);
+  }
+  .shift-card__time{
+    display:flex;align-items:center;gap:.45rem;
+    font-family:'Space Mono',monospace;font-size:1.05rem;font-weight:700;
+    color:var(--teal-deep);
+  }
+  .shift-card--dusk .shift-card__time{color:var(--turquoise);}
+  .shift-card__time .icon{width:19px;height:19px;color:var(--coral);flex:none;}
+  .shift-card__arrow{opacity:.5;font-size:.9rem;}
+  .shift-card__title{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:650;margin:.5rem 0 .2rem;}
+  .shift-card--dusk .shift-card__title{color:var(--white);}
+  .shift-card__desc{font-size:.85rem;color:var(--ink-soft);margin:0 0 .9rem;}
+  .shift-card--dusk .shift-card__desc{color:rgba(255,255,255,.76);}
+  .shift-card__meta{
+    display:flex;flex-direction:column;gap:.35rem;margin:0;padding:.8rem 0 0;
+    font-size:.8rem;border-top:1px dashed var(--line);
+  }
+  .shift-card--dusk .shift-card__meta{border-top-color:rgba(255,255,255,.22);}
+  .shift-card__meta li{display:flex;align-items:center;gap:.4rem;list-style:none;}
+  .shift-card__meta .icon{width:16px;height:16px;color:var(--coral);flex:none;}
+  .shift-flag{
+    display:inline-flex;align-items:center;gap:.35rem;
+    font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--coral-deep);background:rgba(233,123,75,.14);border-radius:999px;padding:.22rem .6rem;
+    margin-top:.55rem;
+  }
+  .shift-card--dusk .shift-flag{color:#FFD9AE;background:rgba(233,123,75,.24);}
+  .shift-flag .icon{width:13px;height:13px;flex:none;}
+
   /* ---------- drinks ---------- */
   .drinks-card{
     background:var(--white);border-radius:var(--radius);border:1px solid var(--line);
@@ -381,6 +419,10 @@
     .price-card{padding:1.5rem 1.3rem 1.6rem;transition:transform .25s ease, box-shadow .25s ease;}
     .price-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
 
+    .shift-grid{flex-direction:row;gap:1.1rem;max-width:760px;}
+    .shift-card{flex:1;min-width:0;padding:1.4rem 1.3rem 1.5rem;transition:transform .25s ease, box-shadow .25s ease;}
+    .shift-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+
     .drinks-card{max-width:760px;}
     .drinks-list{grid-template-columns:repeat(4,1fr);}
 
@@ -438,6 +480,9 @@
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.3-4.5-9.8-9C.6 7.6 2.4 4 6 4c2.2 0 3.7 1.3 4.5 2.7C11.3 5.3 12.8 4 15 4c3.6 0 5.4 3.6 3.8 7-2.5 4.5-9.8 9-9.8 9Z"/></symbol>
   <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v13"/><path d="M6 12H2a10 10 0 0 0 10 9 10 10 0 0 0 10-9h-4"/><path d="M8 9h8"/></symbol>
   <symbol id="i-shell" viewBox="0 0 24 24"><path d="M4 15c0-6 3.6-11 8-11s8 5 8 11H4Z"/><path d="M4 15h16l-1.5 3.2a2 2 0 0 1-1.8 1.1H7.3a2 2 0 0 1-1.8-1.1L4 15Z"/><path d="M12 4v11M8.5 6.5 9.7 15M15.5 6.5 14.3 15"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2V12l3.2 2"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3s.8 3-1.5 5.2C8.2 10.4 6 12 6 14.8A6 6 0 0 0 18 15c0-2.4-1.2-3.8-2.4-5.4-1-1.3-1.3-2.4-1.3-2.4s-1 1.4-2 1.4C11.4 8.6 12 5.4 12 3Z"/></symbol>
+  <symbol id="i-sunset" viewBox="0 0 24 24"><path d="M12 4v3.5M5.6 7.6l1.8 1.8M18.4 7.6l-1.8 1.8"/><path d="M7.5 15a4.5 4.5 0 0 1 9 0"/><path d="M2.5 15h19M5 19h14"/></symbol>
   <symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12s3.5-4.5 9-4.5S21 12 21 12s-3.5 4.5-9 4.5S3 12 3 12Z"/><path d="M21 12l2.3-2.6M21 12l2.3 2.6"/><circle cx="8.3" cy="11" r=".7" fill="currentColor" stroke="none"/></symbol>
 </svg>
 
@@ -464,7 +509,7 @@
 
     <p class="hero__eyebrow">Passeio ecológico · Galinhos / RN</p>
     <h1>Passeio ecológico com uma experiência <em>eco-gastronômica</em> com Júnior Tubarão.</h1>
-    <p>Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco — com parada para almoço no flutuante.</p>
+    <p>Manguezal, salina, cavalos-marinhos e dunas em um só roteiro guiado de barco — com refeição no flutuante. Saídas pela manhã ou no fim da tarde.</p>
 
     <a class="hero__cta" data-wa href="https://wa.me/5584994393494?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20reservar%20o%20passeio%20de%20barco%20em%20Galinhos." target="_blank" rel="noopener">
       <svg class="icon"><use href="#i-wa"/></svg> Reservar pelo WhatsApp
@@ -494,7 +539,7 @@
         <div class="price-card__value"><b>R$250</b><span>/&nbsp;pessoa</span></div>
         <p class="price-card__for">Ideal para casal ou trio</p>
         <ul class="price-card__meta">
-          <li><svg class="icon"><use href="#i-check"/></svg> Almoço incluso</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Refeição inclusa</li>
           <li><svg class="icon"><use href="#i-drop"/></svg> Bebidas à parte</li>
         </ul>
       </div>
@@ -504,13 +549,45 @@
         <div class="price-card__value"><b>R$170</b><span>/&nbsp;pessoa</span></div>
         <p class="price-card__for">Turma de amigos ou família</p>
         <ul class="price-card__meta">
-          <li><svg class="icon"><use href="#i-check"/></svg> Almoço incluso</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Refeição inclusa</li>
           <li><svg class="icon"><use href="#i-drop"/></svg> Bebidas à parte</li>
         </ul>
       </div>
     </div>
 
-    <p class="price-note"><svg class="icon"><use href="#i-note"/></svg> O almoço já está no valor do passeio. As bebidas são cobradas separadamente — veja o cardápio abaixo.</p>
+    <p class="price-note"><svg class="icon"><use href="#i-note"/></svg> A refeição já está no valor do passeio, nos dois horários. As bebidas são cobradas separadamente — veja o cardápio abaixo.</p>
+  </section>
+
+  <!-- HORÁRIOS -->
+  <section class="block block--sand block--tight" id="horarios" data-reveal>
+    <p class="eyebrow">Horários de saída</p>
+    <h2 class="h2">Dois passeios, duas luzes de Galinhos</h2>
+    <p class="lede">Mesmo roteiro e mesmo preço nos dois — o que muda é a hora do dia e o clima da experiência.</p>
+
+    <div class="shift-grid">
+      <div class="shift-card">
+        <p class="shift-card__time"><svg class="icon"><use href="#i-sun"/></svg> 09:00 <span class="shift-card__arrow">→</span> 13:00</p>
+        <p class="shift-card__title">Passeio da manhã</p>
+        <p class="shift-card__desc">Sol alto sobre a salina e água clara no berçário de cavalos-marinhos.</p>
+        <ul class="shift-card__meta">
+          <li><svg class="icon"><use href="#i-check"/></svg> Almoço incluso no flutuante</li>
+          <li><svg class="icon"><use href="#i-drop"/></svg> Bebidas à parte</li>
+        </ul>
+      </div>
+
+      <div class="shift-card shift-card--dusk">
+        <p class="shift-card__time"><svg class="icon"><use href="#i-sunset"/></svg> 15:00 <span class="shift-card__arrow">→</span> 18:30</p>
+        <p class="shift-card__title">Love Mangrove</p>
+        <p class="shift-card__desc">O mesmo roteiro sob a luz do fim de tarde, com volta ao anoitecer.</p>
+        <p class="shift-flag"><svg class="icon"><use href="#i-fire"/></svg> Com fogueira</p>
+        <ul class="shift-card__meta">
+          <li><svg class="icon"><use href="#i-check"/></svg> Jantar incluso no flutuante</li>
+          <li><svg class="icon"><use href="#i-drop"/></svg> Bebidas à parte</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="price-note"><svg class="icon"><use href="#i-clock"/></svg> Os horários de volta são aproximados — a maré e o clima do dia dão o ritmo final do passeio.</p>
   </section>
 
   <!-- DRINKS -->
@@ -543,8 +620,8 @@
   <!-- ROTEIRO -->
   <section class="block block--white" id="roteiro" data-reveal>
     <p class="eyebrow">Roteiro do passeio</p>
-    <h2 class="h2">Sete paradas, uma manhã de Galinhos</h2>
-    <p class="lede">O barco segue esta ordem — a natureza dita o ritmo, então pequenos ajustes de maré e clima podem acontecer.</p>
+    <h2 class="h2">Sete paradas pelas águas de Galinhos</h2>
+    <p class="lede">O mesmo roteiro nos dois horários. O barco segue esta ordem — a natureza dita o ritmo, então pequenos ajustes de maré e clima podem acontecer.</p>
 
     <div class="route">
       <div class="route-item">
@@ -574,8 +651,8 @@
       </div>
       <div class="route-item route-item--stay">
         <div class="route-item__num">06</div>
-        <div class="route-item__head"><span class="route-item__title">Almoço no flutuante</span><span class="route-item__tag">Almoço incluso</span></div>
-        <p class="route-item__desc">A parada mais longa do passeio: almoço servido no flutuante, com tempo livre para banho.</p>
+        <div class="route-item__head"><span class="route-item__title">Refeição no flutuante</span><span class="route-item__tag">Incluso</span></div>
+        <p class="route-item__desc">A parada mais longa do passeio: almoço ou jantar servido no flutuante, conforme o horário, com tempo livre para banho.</p>
       </div>
       <div class="route-item">
         <div class="route-item__num">07</div>
@@ -587,10 +664,10 @@
 
   <!-- ALMOÇO -->
   <section class="block block--sand" id="almoco" data-reveal>
-    <p class="eyebrow">Informações do almoço</p>
+    <p class="eyebrow">Informações da refeição</p>
     <h2 class="h2">Trabalhamos com 2 opções de menu pra vocês escolherem!</h2>
 
-    <p class="menu-note"><svg class="icon"><use href="#i-note"/></svg> <span>O grupo escolhe <b>uma única opção</b> de cardápio — ela vale para todos os participantes.<br>Podemos fazer alteração nos menus.</span></p>
+    <p class="menu-note"><svg class="icon"><use href="#i-note"/></svg> <span>Os dois cardápios valem para o almoço e para o jantar. O grupo escolhe <b>uma única opção</b> — ela vale para todos os participantes.<br>Podemos fazer alteração nos menus.</span></p>
 
     <div class="menu-grid">
       <div class="menu-card">
