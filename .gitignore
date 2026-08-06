@@ -1,0 +1,13 @@
+# Copias e rascunhos locais — nao publicar no site
+*[Cc]opia*.html
+*[Cc]ópia*.html
+* - Copy.html
+*.bak
+*.bak-*
+*.old
+*.tmp
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
